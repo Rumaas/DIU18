@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.6/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <style>
+      .card-img-bottom {
+  color: #fff;
+  height: 20rem;
+  background: url(http://los40es00.epimg.net/los40/imagenes/2017/01/24/album/1485278676_935691_1485279156_album_normal.jpg) center no-repeat;
+  background-size: cover;
+}
+      .sidenav {
+    height: 100%;
+    width: 200px;
+    z-index: 1;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+      .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+      
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+      .sticky{
+          top : 50px;
+      }
+      
+    
+      
+  </style>
+</head>
+    
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    
+    <a class="navbar-brand" href="index.html">
+  <img src="http://www.ajegranada.org/wp-content/uploads/2015/02/logo-ugr.png" width="100" height="100" class="d-inline-block align-top" alt="">          
+  </a>
+    <h1 style="color: aliceblue">AgendaUGR</h1>
+    
+</nav>
+    
+    
+  
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top" id="Menu">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarWEX" >
+                <span class="navbar-toggler-icon"></span>
+                Filtros
+            </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="index.html"> Inicio</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Agenda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Información</a>
+      </li>
+        
+         
+    </ul>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mi perfil</a>
+      </li>   
+        <li><form class="form-inline float-right" action="/action_page.php">
+    <input class="form-control" type="text" placeholder=" ">
+    <button class="btn btn-success" type="submit">Buscar</button>
+  </form></li>
+      </ul>
+      
+  </div> 
+  
+</nav>
+ 
+<div class="row">
+  <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 bg-dark" style="padding-right: 0px">
+        <nav class="navbar navbar-dark bg-dark navbar-expand-sm px-3 sticky-top sticky " id="mySideNav" >
+            
+            <div class=" collapse navbar-collapse  " id="navbarWEX">
+                <ul class="navbar-nav mr-auto flex-column"style="color: aliceblue;text-align: center; padding-left: 15%; margin-right: 0px">
+                    <li class="nav-item align-items-center " >
+                        Fecha
+                        <input id="datepicker" width="100%" />
+                        <script>
+                            $('#datepicker').datepicker({
+                                uiLibrary: 'bootstrap4'
+                            });
+                        </script>
+                        <br>
+                    </li>
+                    <li class="nav-item ">
+                        <div class="form-group">
+                          <label for="sel1">Filtro por Categoria:</label>
+                          <select class="form-control" id="filtroCategoria" onchange="aplicarFiltroCategoria()">
+                            <option>---</option>
+                            <option>Concierto</option>
+                            <option>Conferencia</option>
+                            <option>Exposicion</option>
+                            <option>Cine</option>
+                          </select>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="form-group">
+                          <label for="sel1">Filtro por Localización:</label>
+                          <select class="form-control" id="sel1">
+                            <option>---</option>
+                            <option>Auditorio Manuel de Falla</option>
+                            <option>ETSIIT</option>
+                            <option>Hospital Real</option>
+                            <option>Capilla Real</option>
+                          </select>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="form-group">
+                          <label for="sel1">Filtro por area:</label>
+                          <select class="form-control" id="sel1">
+                            <option>---</option>
+                            <option>Musica</option>
+                            <option>Artes visuales</option>
+                            <option>Artes escenicas</option>
+                            <option>Humanidades</option>
+                          </select>
+                        </div>
+                    </li>
+                       
+                </ul>
+            </div>
+        </nav>
+    </div>
+    
+    <div class="col py-2" id="cuerpoAgenda">
+        
+        <ul style="list-style-type:none; padding-right: 25px; padding-left: 25px;" id="listaAgenda">
+            
+            
+            <li  style="padding-bottom: 20px" id="exposicion">
+                
+                <div class="card">
+                    <div class="row">
+                        
+                        <div class="col-md-5">
+                        <a href="evento_1.html">
+                        <div class="card-img-bottom" style="background:url(https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_sheroff.jpg) center no-repeat; height:20rem; background-size: cover; color: #fff;">
+                        </div></a>
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <div class="card-block">
+                          <h4 class="card-title">Víscera animal</h4>
+                          <p class="card-text">12 DE ABRIL · 20:00 - 30 DE JUNIO · 20:30</p>
+                          <p class="card-text">MIGUEL SCHEROFF</p>
+                          <p class="card-text">La sala de exposiciones del PTS (Granada) presenta Víscera animal, la nueva exposición del jiennense Miguel Scheroff (Navas de Tolosa, 1988), una muestra compuesta por piezas pictóricas que van desde sus inicios como artista hasta la actualidad...</p>
+                          <p class="card-text">ÁREA DE ARTES VISUALES - Exposición</p>
+                          <a href="#Favoritos" class="btn btn-success">Añadir a favoritos</a>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  
+            </li>
+            <li  style="padding-bottom: 20px" id="cine">
+                
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-5">
+                        <a href="evento_2.html">
+                        <div class="card-img-bottom" style="background:url(https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-James-Gray.jpg) center no-repeat; height:20rem; background-size: cover; color: #fff;">
+                        </div>
+                        </a>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-block">
+                          <h4 class="card-title">El sueño de Ellis (2013)</h4>
+                          <p class="card-text">15 DE MAYO · 21:00</p>
+                          <p class="card-text">Ciclo "Cineastas del siglo XXI (III): James Gray"</p>
+                          <p class="card-text">ÁREA DE CINE Y AUDIOVISUAL - Cine</p>
+                          <a href="#Favoritos" class="btn btn-success">Añadir a favoritos</a>
+                        </div>
+                      </div>
+    
+                    </div>
+                  </div>
+                  
+            </li>
+            <li  style="padding-bottom: 20px" id="conferencia">
+                
+                <div class="card">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <a href="evento_3.html">
+                        <div class="card-img-bottom" style="background:url(https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-el-principion-del-fin-450.jpg) center no-repeat; height:20rem; background-size: cover; color: #fff;">
+                        </div></a>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="card-block">
+                          <h4 class="card-title">Las élites moriscas, antes y después de la Guerra de las Alpujarras </h4>
+                          <p class="card-text">9 DE MAYO · 19:30</p>
+                          <p class="card-text">Ciclo "El principio del fin: 450 años de la rebelión de los moriscos en las Alpujarras (1568)"</p>
+                          <p class="card-text">ÁREA DE HUMANIDADES - Conferencia</p>
+                          <a href="#Favoritos" class="btn btn-success">Añadir a favoritos</a>
+                        </div>
+                      </div>
+      
+                    </div>
+                  </div>
+                  
+            </li>
+            
+            <li  style="padding-bottom: 20px" id="concierto">    
+                <div class="card">
+                  <div class="row">
+                      <div class="col-md-5">
+                          <a href="evento_4.html">
+                      <div class="card-img-bottom" style="background:url(https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-Concierto-12-de-mayo.jpg) center no-repeat; height:20rem; background-size: cover; color: #fff;">
+                      </div></a>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="card-block">
+                        <h4 class="card-title">Ubi sunt. Músicas en torno a la llegada de la peste a la Europa medieval</h4>
+                        <p class="card-text">12 DE MAYO · 20:00</p>
+                        <p class="card-text">Ciclo "El principio del fin: 450 años de la rebelión de los moriscos en las Alpujarras (1568)"</p>
+                        <p class="card-text">ÁREA DE MÚSICA - Concierto</p>
+                        <a href="#Favoritos" class="btn btn-success">Añadir a favoritos</a>
+                      </div>
+                    </div>
+    
+                  </div>
+                </div>
+              
+              </li>
+            
+        </ul>
+    </div>
+    </div>
+
+
+    <footer class="container-fluid bg-dark text-center  ">
+        <br/><br/>
+    <p style="color: aliceblue">Redes Sociales</p>
+        
+        
+        <a class="fa fa-facebook-square" href="https://es-es.facebook.com/" style="font-size: 40px;color: aliceblue"></a>
+        
+        <a class="fa fa-twitter-square" href="https://twitter.com/canalugr?lang=es" style="font-size: 40px;color: aliceblue"></a>
+        <br/>
+         <div class="form-group" style="width: 200px;">
+                          <label for="sel1" style="color: aliceblue">Selector de idioma:</label>
+                          <select class="form-control" id="sel1">
+                            <option>Español</option>
+                            <option>Ingles</option>
+                            <option>Aleman</option>
+                            <option>Portugues</option>
+                          </select>
+                        </div>
+        <br/>
+       
+    </footer>
+
+   
+    <script>
+        function aplicarFiltroCategoria(){
+            var filtro = document.getElementById("filtroCategoria");
+            var aux = filtro.value;
+           
+            
+            if(aux == "Concierto"){
+                var concierto = document.getElementById("concierto");
+                 var exposicion = document.getElementById("exposicion");
+                 var cine = document.getElementById("cine");
+                 var conf = document.getElementById("conferencia");
+                exposicion.style.display = "none";
+                cine.style.display = "none";
+                conf.style.display = "none";
+                concierto.style.display = "block";
+            }else if(aux == "---"){
+               var exposicion = document.getElementById("exposicion");
+                var concierto = document.getElementById("concierto");
+                 var cine = document.getElementById("cine");
+                 var conf = document.getElementById("conferencia");
+                 exposicion.style.display = "block";
+                cine.style.display = "block";
+                concierto.style.display = "block";
+                conf.style.display = "block";
+            }else if(aux == "Conferencia"){
+                var concierto = document.getElementById("concierto");
+                 var cine = document.getElementById("cine");
+                 var exposicion = document.getElementById("exposicion");
+                var conf = document.getElementById("conferencia");
+                exposicion.style.display = "none";
+                concierto.style.display = "none";
+                cine.style.display = "none";
+                conf.style.display = "block";
+            }else if(aux == "Cine"){
+                var concierto = document.getElementById("concierto");
+                 var exposicion = document.getElementById("exposicion");
+                 var conf = document.getElementById("conferencia");
+                var cine = document.getElementById("cine");
+                concierto.style.display = "none";
+                cine.style.display = "block";
+                exposicion.style.display = "none";
+                conf.style.display = "none";
+                
+            }else if(aux == "Exposicion"){
+                var exposicion = document.getElementById("exposicion");
+                var concierto = document.getElementById("concierto");
+                 var cine = document.getElementById("cine");
+                 var conf = document.getElementById("conferencia");
+                concierto.style.display = "none";
+                cine.style.display = "none";
+                exposicion.style.display = "block";
+                conf.style.display = "none";
+            }
+            
+        }
+    
+    </script>
+    
+
+</body>
+</html>

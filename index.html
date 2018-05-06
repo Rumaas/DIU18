@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+      .carousel-inner img {
+      width: 100%;
+      height: 100%;
+  }
+      
+  .fakeimg {
+      height: 200px;
+      background: #aaa;
+  }
+  </style>
+</head>
+    
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+    
+    <a class="navbar-brand" href="index.html">
+  <img src="http://www.ajegranada.org/wp-content/uploads/2015/02/logo-ugr.png" width="100" height="100" class="d-inline-block align-top" alt="">          
+  </a>
+    <h1 style="color: aliceblue">AgendaUGR</h1>
+    
+</nav>
+    
+    
+  
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+        <a class="nav-link" href="./index.html"> Inicio</a></li>
+      <li class="nav-item">
+        <a class="nav-link" href="./agenda.html">Agenda</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Información</a>
+      </li> 
+    </ul>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mi perfil</a>
+      </li>   
+        <li><form class="form-inline float-right" action="/action_page.php">
+    <input class="form-control" type="text" placeholder=" ">
+    <button class="btn btn-success" type="submit">Buscar</button>
+  </form></li>
+      </ul>
+      
+  </div> 
+  
+</nav>
+ 
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <a href="evento_2.html"><img src="https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-James-Gray.jpg" width="1100" height="300"></a>
+      <div class="carousel-caption">
+        <h3>El sueño de Ellis (2013)</h3>
+        <p>15 DE MAYO · 21:00</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+        <a href="evento_4.html"><img src="https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-Concierto-12-de-mayo.jpg" width="1100" height="300"></a>
+      <div class="carousel-caption">
+        <h3>Ubi sunt. Músicas en torno a la llegada de la peste a la Europa medieval</h3>
+        <p>12 DE MAYO · 20:00</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+        <a href="evento_1.html"><img src="https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_sheroff.jpg" width="1100" height="300"></a>
+      <div class="carousel-caption">
+        <h3>Víscera animal</h3>
+        <p>12 DE ABRIL · 20:00 - 30 DE JUNIO · 20:30</p>
+      </div>   
+    </div>
+
+    <div class="carousel-item">
+        <a href="evento_3.html"><img src="https://lamadraza.ugr.es/wp-content/uploads/2018/04/web_-el-principion-del-fin-450.jpg" width="1100" height="300"></a>
+      <div class="carousel-caption">
+        <h3>Las élites moriscas, antes y después de la Guerra de las Alpujarras</h3>
+        <p>9 DE MAYO · 19:30</p>
+      </div>   
+    </div>
+
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<footer class="container-fluid bg-dark text-center  ">
+    <br/><br/>
+<p style="color: aliceblue">Redes Sociales</p>
+    
+    
+    <a class="fa fa-facebook-square" href="https://es-es.facebook.com/" style="font-size: 40px;color: aliceblue"></a>
+    
+    <a class="fa fa-twitter-square" href="https://twitter.com/canalugr?lang=es" style="font-size: 40px;color: aliceblue"></a>
+    <br/>
+     <div class="form-group" style="width: 200px;">
+                      <label for="sel1" style="color: aliceblue">Selector de idioma:</label>
+                      <select class="form-control" id="sel1">
+                        <option>Español</option>
+                        <option>Ingles</option>
+                        <option>Aleman</option>
+                        <option>Portugues</option>
+                      </select>
+                    </div>
+    <br/>
+   
+</footer>
+
+
+</body>
+</html>
